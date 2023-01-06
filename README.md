@@ -88,7 +88,7 @@ One of my goals with this project was to get Auth implemented. I tried to get it
 Feel free to reach out to me via Linked in, Github, or my email.
 Thank you for checking out my project!
 
-###[LinkedIn](https://www.linkedin.com/in/matt-kiska)
-###[GitHub](https://www.github.com/mattkiska)
-###[Portfolio](https://www.mattkiska.com)
-###[Email](mailto:mkiska1@gmail.com)
+### [LinkedIn](https://www.linkedin.com/in/matt-kiska)
+### [GitHub](https://www.github.com/mattkiska)
+### [Portfolio](https://www.mattkiska.com)
+### [Email](mailto:mkiska1@gmail.com)
