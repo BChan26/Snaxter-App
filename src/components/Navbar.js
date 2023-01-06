@@ -14,6 +14,7 @@ const NavbarComponent = () => {
   const total = state.reduce((total, item) => {
     return (total + item.price*item.quantity)
     }, 0)
+    const fixedTotal = total.toFixed(2);
   
 
   return (
@@ -31,6 +32,11 @@ const NavbarComponent = () => {
             </Modal.Header>
             <Modal.Body>
               <Cart />
+              {state.length > 0 && (
+              <div className="total">
+                <h2>Total:{fixedTotal}</h2>
+              </div>
+            )}
             </Modal.Body>
           </Modal>
     </>
