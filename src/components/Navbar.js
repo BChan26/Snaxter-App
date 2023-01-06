@@ -21,6 +21,7 @@ const NavbarComponent = () => {
     <>
       <Navbar className="bg-dark shadow-lg mb-3">
         <Navbar.Brand href="/"
+        style={{color: 'Black', fontSize: '30px', fontweight: 'bold'}}
         >Snaxter</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" />
