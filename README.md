@@ -82,12 +82,13 @@ The backend was built with Django and Django Rest Framework. The backend is a RE
 
 Created models of User, Restaurant & Menu
 
+One of my goals with this project was to get Auth implemented. I tried to get it to work a few times a few different ways but just had a hard time implemented ot the front end. It is set up successfully on the back end. I will be working on getting it to work on the front end in the future.
 
 ## My-Links
 Feel free to reach out to me via Linked in, Github, or my email.
 Thank you for checking out my project!
 
-[LinkedIn](https://www.linkedin.com/in/matt-kiska)
-[GitHub](https://www.github.com/mattkiska)
-[Portfolio](https://www.mattkiska.com)
-[Email](mailto:mkiska1@gmail.com)
+###[LinkedIn](https://www.linkedin.com/in/matt-kiska)
+###[GitHub](https://www.github.com/mattkiska)
+###[Portfolio](https://www.mattkiska.com)
+###[Email](mailto:mkiska1@gmail.com)
