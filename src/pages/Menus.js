@@ -1,16 +1,12 @@
 import { Row, Col, Card, Button } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { CartContext } from "../CartContext";
-import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-const Menu = (props) => {
-  const { product } = props
+const Menu = () => {
   const [menus, setMenus] = useState([])
   const { id } = useParams()
-  const cart = useContext(CartContext)
-  const productQuantity = cart.getProductQuantity(product.id)
 
   useEffect(() => {
     const getMenus = async () => {
@@ -23,19 +19,27 @@ const Menu = (props) => {
     getMenus()
   }, [])
 
+  const GlobalState=useContext(CartContext)
+  const dispatch=GlobalState.dispatch
+  console.log(GlobalState)
+
     return menus ? (
         <>
             <h2 align="center" className="p-3">Check out our Menu</h2>
             <Row xs={1} md={3} className="g-4">
-                {menus.map((item) => (
-                    <Col key={item.name}>
+                {menus.map((item, index) => (
+                  item.quantity =1,
+                    <Col key={index}>
                         <Card>
                             <Card.Img variant="top" src={item.item_picture} />
                             <Card.Body>
                                 <Card.Title>{item.name}</Card.Title>
                                 <Card.Text>{item.description}</Card.Text>
                                 <Card.Text>${item.price}</Card.Text>
-                                <Button>Add to Cart</Button>
+                                <Button onClick={() => dispatch({
+                                  type: 'ADD',
+                                  payload: item
+                                  })}>Add to Cart</Button>
                             </Card.Body>
                         </Card>
                     </Col>

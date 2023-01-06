@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
