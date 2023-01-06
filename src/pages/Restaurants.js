@@ -18,15 +18,16 @@ const Restaurant = () => {
   }, []);
   return (
     <>
-      <h1 align="center" className="p-3">Restaurants Near You</h1>
+      <h1 align="center" className="p-3" style={{color: 'Black'}}>Restaurants Near You</h1>
       <Row xs={1} md={3} className="g-4">
         {restaurants.map((item, index) => (
           <Col key={index}>
             <Link to={`/restaurants/${item.id}`}
-            className="text-decoration-none">
+            className="text-dark" style={{textDecoration: 'none'}}
+            >
             <Card>
               <Card.Img variant="top" src={item.restaurant_picture} />
-              <Card.Body>
+              <Card.Body className="rest-card">
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>{item.description}</Card.Text>
               </Card.Body>

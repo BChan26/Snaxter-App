@@ -19,8 +19,9 @@ const NavbarComponent = () => {
 
   return (
     <>
-      <Navbar className="bg-white shadow-sm mb-3">
-        <Navbar.Brand href="/">Snaxter</Navbar.Brand>
+      <Navbar className="bg-dark shadow-lg mb-3">
+        <Navbar.Brand href="/"
+        >Snaxter</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" />
         <Button onClick={handleShow}>Cart</Button>
