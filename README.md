@@ -9,7 +9,6 @@ A Full-Stack food delivery app built with Django, ReactJs, & Bootstrap.
 2. [Preparation](#preparation)
 3. [Frontend](#frontend)
 4. [Backend](#backend)
-5. [Full-CRUD](#full-crud)
 6. [My-Links](#my-links)
 
 ## Introduction
@@ -26,10 +25,63 @@ As well as an ERD (Entity Relationship Diagram) to visualize the relationships b
 ## Frontend
 The frontend was built with ReactJs and Bootstrap. The frontend is a single page application that uses React Router to navigate between the different components. The frontend is also connected to the backend via Axios.
 
+Utilized useContext to pass data between components.
+Created a switch statement for front end CRUD operations, for adding, updating, and deleting items from the cart.
+```
+export const CartContext = createContext()
+export const Context = (props) => {
+    const reducer = (state, action) => {
+        switch(action.type) {
+
+            case 'ADD':
+                const tempstate = state.filter((item)=> action.payload.id === item.id)
+                if(tempstate.length > 0){
+                    return state;
+                } else {
+                    return [...state, action.payload]
+                }
+            case 'INCREASE':
+                const tempstate1 = state.map((item)=> {
+                    if(item.id === action.payload.id){
+                        return {...item, quantity: item.quantity + 1}
+                    } else {
+                        return item
+                    }
+                })
+                return tempstate1
+            case 'DECREASE':
+                const tempstate2 = state.map((item) => {
+                    if(item.id === action.payload.id){
+                        return {...item, quantity: item.quantity - 1}
+                    } else {
+                        return item
+                    }
+                })
+                return tempstate2
+            case 'REMOVE':
+                const tempstate3 = state.filter(
+                    (item) => item.id !== action.payload.id
+                )
+                return tempstate3
+
+        default:
+             return state
+        }
+    }
+
+    const [state, dispatch] = useReducer(reducer, [])
+
+    const info = {state, dispatch}
+
+
+```
+The cart was by far the most challenging part of the project. I watched a lot of videos and sampled code from tons of different sources. I probably redid the Cart and CartContext about 4-5 different times before I found a way that I really wanted to do it. Very happy with the way it turned out.
+
 ## Backend
 The backend was built with Django and Django Rest Framework. The backend is a RESTful API that uses JWT for authentication. The backend is also connected to the frontend via Axios.
 
-## Full-CRUD
+Created models of User, Restaurant & Menu
+
 
 ## My-Links
 Feel free to reach out to me via Linked in, Github, or my email.
